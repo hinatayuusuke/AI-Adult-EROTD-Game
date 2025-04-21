@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ファイル一覧</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    ul { list-style: none; padding: 0; }
+    li { margin: 5px 0; }
+    a { text-decoration: none; color: #3498db; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h1>ファイル一覧</h1>
+  <ul id="file-list"></ul>
+  <script>
+    // 表示したいファイル名をここに追加してください
+    const files = [
+      'image/nun01.png',
+      // 追加例: 'images/sample.jpg'
+    ];
+
+    const listEl = document.getElementById('file-list');
+    files.forEach(filename => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = './' + filename;
+      a.textContent = filename;
+      li.appendChild(a);
+      listEl.appendChild(li);
+    });
+  </script>
+</body>
+</html>
